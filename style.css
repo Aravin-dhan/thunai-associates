@@ -564,6 +564,8 @@ body {
   font-size: 0.94rem;
   line-height: 1.9;
   margin-top: 36px;
+  text-align: justify;
+  hyphens: auto;
 }
 
 .policy-body h3 {
