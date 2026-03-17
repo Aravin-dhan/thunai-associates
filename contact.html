@@ -8,7 +8,30 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="style.css">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Thunai Associates LLP">
+  <meta property="og:title" content="Contact | Thunai Associates LLP">
+  <meta property="og:description" content="Get in touch with Thunai Associates LLP for professional enquiries, intern applications, or partnership requests.">
+  <meta property="og:url" content="https://webe-sable.vercel.app/contact">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Contact | Thunai Associates LLP">
+  <meta name="twitter:description" content="Get in touch for professional enquiries, intern applications, or partnership requests.">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://webe-sable.vercel.app/" },
+      { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://webe-sable.vercel.app/contact" }
+    ]
+  }
+  </script>
+
   <script>
     (function(){
       var t = localStorage.getItem('theme');
@@ -30,7 +53,16 @@
           <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">☾</button>
           <a href="contact.html" class="nav-contact">Contact</a>
         </nav>
+        <button id="nav-toggle" class="nav-toggle" aria-label="Open navigation">
+          <span></span><span></span><span></span>
+        </button>
       </div>
+      <nav class="nav-mobile w" id="nav-mobile">
+        <a href="index.html">Home</a>
+        <a href="work.html">Our Work</a>
+        <a href="policy.html">Policy</a>
+        <a href="contact.html">Contact</a>
+      </nav>
     </div>
   </header>
 
@@ -96,7 +128,7 @@
         <h3 class="form-title">Apply for an Internship</h3>
         <p class="form-intro">We periodically welcome law and commerce graduates and postgraduate students for internship engagements across our practice areas in public policy, tax, legal, and compliance. Submit your application through the form below. We will be in touch if a suitable opening arises.</p>
 
-        <a class="btn btn-fill" href="GOOGLE_FORM_URL" target="_blank" rel="noopener noreferrer" style="display: inline-block; margin-bottom: 24px;">
+        <a class="btn btn-fill" href="https://forms.gle/cdnkBh7GXPzqq8i88" target="_blank" rel="noopener noreferrer" style="display: inline-block; margin-bottom: 24px;">
           Open Internship Application Form &rarr;
         </a>
 
@@ -255,9 +287,20 @@
 
     (function(){
       var p = location.pathname.split('/').pop() || 'index.html';
-      document.querySelectorAll('.site-nav a, .footer-nav a').forEach(function(a){
+      document.querySelectorAll('.site-nav a, .footer-nav a, .nav-mobile a').forEach(function(a){
         if (a.getAttribute('href') === p) a.classList.add('active-nav');
       });
+    })();
+
+    (function(){
+      var toggle = document.getElementById('nav-toggle');
+      var mobile = document.getElementById('nav-mobile');
+      if (toggle && mobile) {
+        toggle.addEventListener('click', function(){
+          toggle.classList.toggle('open');
+          mobile.classList.toggle('open');
+        });
+      }
     })();
   </script>
 
