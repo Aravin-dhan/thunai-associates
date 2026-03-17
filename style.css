@@ -608,13 +608,16 @@ body {
 }
 
 .policy-body {
-  max-width: 72ch;
+  max-width: 100%;
   color: var(--muted);
   font-size: 0.94rem;
   line-height: 1.9;
   margin-top: 36px;
   text-align: justify;
-  hyphens: auto;
+  text-justify: inter-word;
+  hyphens: none;
+  word-break: normal;
+  overflow-wrap: break-word;
 }
 
 .policy-body h3 {
